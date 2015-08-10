@@ -9,9 +9,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "hashicorp/precise64"
    
   config.vm.define "consul1" do |consul1|
-	config.vm.provision "shell", path: "consul1/provision.sh"
+	config.vm.provision "shell", path: "provision.sh"
     consul1.vm.hostname = "consul-server"
 	consul1.vm.network "private_network", ip: "172.20.20.10"
-	consul1.vm.gui = true
   end
 end
