@@ -14,8 +14,8 @@ rm *.zip
 mkdir -p /etc/consul.d
 mkdir /var/consul
 
-# Step 4 - Copy the server configuration (this is a bootstrap configuration).
-cp /vagrant/consul3/config.json /etc/consul.d/config.json
+# Step 4 - Copy the server configuration.
+cp $1 /etc/consul.d/config.json
 
 # Step 5 - Start Consul
 consul agent -config-file=/etc/consul.d/config.json
