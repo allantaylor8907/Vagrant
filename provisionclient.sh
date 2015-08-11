@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Step 1 - Get the necessary utilities and install them.
+apt-get update
+apt-get install -y unzip
+
+# Step 2 - Get the Consul Zip file and extract it.  
+cd /usr/local/bin
+wget https://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip
+unzip *.zip
+rm *.zip
+
+# step 3 - Get the Consul UI
+wget https://dl.bintray.com/mitchellh/consul/0.5.2_web_ui.zip
+unzip *.zip
+rm *.zip
+
+# Step 4 - Make the Consul directory.
+mkdir -p /etc/consul.d
+mkdir /var/consul
+
+# Step 5 - Copy the server configuration.
+cp $1 /etc/consul.d/config.json
+
+# Step 6 - Start Consul
+consul agent -config-file=/etc/consul.d/config.json

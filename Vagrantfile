@@ -34,4 +34,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     consul3.vm.hostname = "consul3"
 	consul3.vm.network "private_network", ip: "172.20.20.30"
   end
+  
+  config.vm.define "consulclient" do |client|
+	config.vm.provision "shell" do |s|
+		s.path = "provisionclient.sh"
+		s.args   = ["/vagrant/consulclient/config.json"]
+	end
+    client.vm.hostname = "consulclient"
+	client.vm.network "private_network", ip: "172.20.20.40"
+  end
 end
