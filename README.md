@@ -23,8 +23,8 @@ Once you have downloaded the files open a command prompt and change to the direc
 
 Thereafter you can start the other 2 servers:
 
-`vagrant up consul2`
-`vagrant up consul3`
+`vagrant up consul2
+vagrant up consul3`
 
 The client instance is started in much the same way:
 
@@ -33,4 +33,3 @@ The client instance is started in much the same way:
 ### Accessing the Consul Web UI ###
 
 Once the cluster is up-and-running you will be able to access the Consul Web UI from a browser running on your host workstation by going to the following URL: [http://172.20.20.40:8500/ui/](http://http://172.20.20.40:8500/ui/).
-
