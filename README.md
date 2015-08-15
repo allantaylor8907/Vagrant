@@ -23,10 +23,8 @@ Once you have downloaded the files open a command prompt and change to the direc
 
 Thereafter you can start the other 2 servers:
 
-`
-vagrant up consul2
-vagrant up consul3
-`
+    vagrant up consul2
+    vagrant up consul3
 
 The client instance is started in much the same way:
 
