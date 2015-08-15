@@ -30,6 +30,8 @@ The client instance is started in much the same way:
 
 `vagrant up consulclient`
 
+For full details please refer to the blog posts mentioned above.
+
 ### Accessing the Consul Web UI ###
 
 Once the cluster is up-and-running you will be able to access the Consul Web UI from a browser running on your host workstation by going to the following URL: [http://172.20.20.40:8500/ui/](http://http://172.20.20.40:8500/ui/).
