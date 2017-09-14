@@ -2,6 +2,9 @@
     "bootstrap": false,
     "server": false,
     "datacenter": "dc1",
+    "addresses": {
+        "http": "172.20.20.40"
+    },
     "data_dir": "/var/consul",
 	"ui_dir": "/usr/local/bin/dist",
 	"encrypt": "Dt3P9SpKGAR/DIUN1cDirg==",

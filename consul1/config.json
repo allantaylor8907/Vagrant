@@ -2,6 +2,9 @@
     "bootstrap": true,
     "server": true,
     "datacenter": "dc1",
+    "addresses": {
+    	"http": "172.20.20.10"
+    },
     "data_dir": "/var/consul",
 	"encrypt": "Dt3P9SpKGAR/DIUN1cDirg==",
     "log_level": "INFO",
