@@ -1,15 +1,17 @@
 #!/bin/bash
 
 # Step 1 - Get the necessary utilities and install them.
-apt-get update
-apt-get install -y unzip
+sudo apt-get update
+sudo apt-get install -y unzip curl wget
+sudo apt-get update
+#sudo apt-get dist-upgrade -y
 
 # Step 2 - Copy the upstart script to the /etc/init folder.
 cp /vagrant/consul.conf /etc/init/consul.conf
 
 # Step 3 - Get the Consul Zip file and extract it.  
 cd /usr/local/bin
-wget https://dl.bintray.com/mitchellh/consul/0.5.2_linux_amd64.zip
+wget --no-check-certificate https://releases.hashicorp.com/consul/0.9.3/consul_0.9.3_linux_amd64.zip
 unzip *.zip
 rm *.zip
 

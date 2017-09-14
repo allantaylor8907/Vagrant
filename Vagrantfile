@@ -6,8 +6,9 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  config.vm.box = "hashicorp/precise64"
-   
+  config.vm.box = "ubuntu/trusty64"
+  config.vm.box_download_insecure = true
+
   config.vm.define "consul1" do |consul1|
 	config.vm.provision "shell" do |s|
 		s.path = "provision.sh"
@@ -43,4 +44,41 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     client.vm.hostname = "consulclient"
 	client.vm.network "private_network", ip: "172.20.20.40"
   end
+
+  config.vm.define "consul4" do |consul4|
+	config.vm.provision "shell" do |s|
+		s.path = "provision.sh"
+		s.args   = ["/vagrant/consul4/config.json"]
+	end
+    consul4.vm.hostname = "consul4"
+	consul4.vm.network "private_network", ip: "172.20.20.50"
+  end
+
+  config.vm.define "consul5" do |consul5|
+	config.vm.provision "shell" do |s|
+		s.path = "provision.sh"
+		s.args   = ["/vagrant/consul5/config.json"]
+	end
+    consul5.vm.hostname = "consul5"
+	consul5.vm.network "private_network", ip: "172.20.20.60"
+  end
+
+  config.vm.define "consul6" do |consul6|
+	config.vm.provision "shell" do |s|
+		s.path = "provision.sh"
+		s.args   = ["/vagrant/consul6/config.json"]
+	end
+    consul6.vm.hostname = "consul6"
+	consul6.vm.network "private_network", ip: "172.20.20.70"
+  end
+
+  config.vm.define "consulclient2" do |client2|
+	config.vm.provision "shell" do |s|
+		s.path = "provisionclient.sh"
+		s.args   = ["/vagrant/consulclient2/config.json"]
+	end
+    client2.vm.hostname = "consulclient2"
+	client2.vm.network "private_network", ip: "172.20.20.80"
+  end
 end
+
